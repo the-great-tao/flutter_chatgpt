@@ -3,7 +3,7 @@ description: aichat
 
 publish_to: "none"
 
-version: 1.0.0+2
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.18.6 <3.0.0"
@@ -28,6 +28,7 @@ dependencies:
   provider: ^6.0.5
   flutter_tts: ^3.6.3
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_test:
@@ -45,5 +46,11 @@ flutter:
 flutter_launcher_icons:
   image_path: "assets/icon.jpg"
   ios: true
-  remove_alpha_ios: true
   android: false
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#fe9c1d"
+  ios: true
+  android: false
+  web: false

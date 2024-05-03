@@ -9,22 +9,28 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.black,
   ));
-  await dotenv.load(fileName: ".env");
 
+  await dotenv.load(fileName: ".env");
   await GetStorage.init();
   await ChatGPT.initChatGPT();
+  await configLoading();
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => AIChatStore(),
       child: const MyApp(),
     ),
   );
-  configLoading();
+
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
