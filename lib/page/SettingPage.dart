@@ -216,21 +216,21 @@ class _SettingPageState extends State<SettingPage> with WidgetsBindingObserver {
                   // ),
 
                   /// Empty storage
-                  if (Config.isDebug)
-                    renderItemWidget(
-                      'images/debug_icon.png',
-                      Colors.indigo,
-                      22,
-                      'Debug: Clear Storage',
-                      () {
-                        ChatGPT.storage.erase();
-                        final store =
-                            Provider.of<AIChatStore>(context, listen: false);
-                        store.syncStorage();
-                        SpUtil.clear();
-                        EasyLoading.showToast('Clear Storage Success!');
-                      },
-                    ),
+                  // if (Config.isDebug)
+                  //   renderItemWidget(
+                  //     'images/debug_icon.png',
+                  //     Colors.indigo,
+                  //     22,
+                  //     'Debug: Clear Storage',
+                  //     () {
+                  //       ChatGPT.storage.erase();
+                  //       final store =
+                  //           Provider.of<AIChatStore>(context, listen: false);
+                  //       store.syncStorage();
+                  //       SpUtil.clear();
+                  //       EasyLoading.showToast('Clear Storage Success!');
+                  //     },
+                  //   ),
                 ],
               ),
             ),
