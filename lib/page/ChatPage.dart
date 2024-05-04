@@ -30,7 +30,8 @@ class ChatPage extends StatefulWidget {
 enum TtsState { playing, stopped, paused, continued }
 
 class _ChatPageState extends State<ChatPage> {
-  static final LottieBuilder _generatingLottie = Lottie.asset("images/loading2.json");
+  static final LottieBuilder _generatingLottie =
+      Lottie.asset("images/loading2.json");
 
   final ScrollController _listController = ScrollController();
 
@@ -175,7 +176,7 @@ class _ChatPageState extends State<ChatPage> {
                             ),
                             SizedBox(width: 12),
                             Text(
-                              "ChatGPT",
+                              "My AI Fellow",
                               style: TextStyle(
                                 color: Color.fromRGBO(0, 0, 0, 1),
                                 fontSize: 18,
@@ -235,12 +236,12 @@ class _ChatPageState extends State<ChatPage> {
         tipsWidget.add(
           Ink(
             decoration: BoxDecoration(
-              color: const Color.fromRGBO(229, 245, 244, 1),
+              color: const Color.fromARGB(255, 255, 225, 195),
               borderRadius: BorderRadius.circular(12.0),
             ),
             child: InkWell(
               splashColor: Colors.transparent,
-              highlightColor: const Color.fromRGBO(192, 238, 221, 1.0),
+              highlightColor: const Color.fromARGB(255, 255, 225, 195),
               borderRadius: BorderRadius.circular(12.0),
               onTap: () {
                 if (globalQuestionInputKey.currentState != null) {
@@ -251,7 +252,8 @@ class _ChatPageState extends State<ChatPage> {
                     currentState.questionController.text = tip;
                     currentState.focusNode.requestFocus();
                     currentState.questionController.selection =
-                        TextSelection.fromPosition(TextPosition(offset: tip.length));
+                        TextSelection.fromPosition(
+                            TextPosition(offset: tip.length));
                     setState(() {});
                   }
                 }
@@ -356,8 +358,8 @@ class _ChatPageState extends State<ChatPage> {
   Widget _renderMessageItem(Map message, int index) {
     String role = message['role'];
     String defaultAvatar = 'images/logo.png';
-    String defaultRoleName = 'ChatGPT';
-    Color defaultColor = const Color.fromRGBO(229, 245, 244, 1);
+    String defaultRoleName = 'My AI Fellow';
+    Color defaultColor = const Color.fromARGB(255, 255, 225, 195);
     Color defaultTextColor = Colors.black;
     String defaultTextPrefix = '';
     List<Widget> defaultIcons = [

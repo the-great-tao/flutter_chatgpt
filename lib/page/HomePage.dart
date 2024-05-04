@@ -113,19 +113,6 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.white,
         elevation: 0.5,
-        actions: [
-          const SizedBox(width: 6),
-          IconButton(
-            icon: const Icon(Icons.settings),
-            iconSize: 32,
-            color: const Color.fromRGBO(98, 98, 98, 1.0),
-            onPressed: () {
-              // ChatGPT.genImage('Robot avatar, cute');
-              Utils.jumpPage(context, const SettingPage());
-            },
-          ),
-          const SizedBox(width: 8),
-        ],
       ),
       body: SafeArea(
         child: Column(
@@ -158,7 +145,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 0, 8, 0),
                                   height: 16,
                                   child: const Image(
                                     image: AssetImage('images/arrow_icon.png'),
@@ -246,7 +234,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
-                color: const Color.fromRGBO(229, 245, 244, 1),
+                color: Color.fromARGB(255, 255, 225, 195),
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Row(
@@ -274,7 +262,7 @@ class _HomePageState extends State<HomePage> {
                             chatModel['desc'],
                             softWrap: true,
                             style: const TextStyle(
-                              color: Color.fromRGBO(144, 152, 154, 1),
+                              color: Color.fromRGBO(115, 115, 115, 1),
                               fontSize: 16,
                               height: 22 / 16,
                             ),
